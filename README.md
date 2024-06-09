@@ -34,7 +34,7 @@ Plus, since our platform is notification platform, the deadline information is r
 
 ## 1. Data Pipelines
 
-`will be updated`
+Our team operated the ziggle ai system by configuring a CD using GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the ai system implement by configuring a separate Python-based API server. The accumulated data while operating ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
 
 ## 2. Modeling
 
