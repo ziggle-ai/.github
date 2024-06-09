@@ -1,4 +1,4 @@
-# Most of us are from 'Ziggle' development team 🐱
+# We are (almost) 'Ziggle' development team! 🐱
 
 > Team information
 
