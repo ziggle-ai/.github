@@ -70,6 +70,74 @@ We basically forked the existing Ziggle frontend repository and edited for demoi
 
 # 6. Application demonstration (300 words)
 
+We have an existing application, Ziggle, and we apply advanced features over Ziggle. We applied the alarm when the user wanted to notice that it was already uploaded, the enhanced search feature, which uses vector similarity, and the deadline auto-detecting feature.
+
+## 1. Posting notices
+
+After logging into our application with Infoteam IDP (you will need the gist email), go to the page to write the notice. Then you can find the UI below.
+
+<p align="center" style="color:gray">
+  <img src="../assets/ziggle-write_page.png" width="300"/></br>
+  The writing page in Ziggle.
+</p>
+
+With the UI above, you can write the notice's body and title. Complete the writing and push the "submit" button. Then, the machine learning feature will be active, checking whether the notice's body is already in the database.
+
+If the notice's body is already in the database, our webpage alerts the user to prevent a conflict notice, and the notice will be uploaded correctly.
+
+<div align="center">
+  <table cellpadding="0">
+    <tr style="padding: 0"> 
+      <td valign="top">
+        <p align="center" style="color:gray">
+          <img src="../assets/upload-not-similar_notice.png" width="300"/></br>
+          If user write the notice which is not in the database.
+        </p>
+      </td>
+      <td valign="top">
+        <p align="center" style="color:gray">
+          <img src="../assets/upload-similar_notice.png" width="300"/></br>
+          If user write the notice which is in the database.
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+Since this system can have malfunction, after checking conflict notice, it check users intention with showing the notice that similar to users' input. If user say it is not the similar notice, store the database as edgecase and upload notice with alarm. Else, upload notice without alarm.
+
+<div align="center">
+  <table cellpadding="0">
+    <tr style="padding: 0"> 
+      <td valign="top">
+        <p align="center" style="color:gray">
+          <img src="../assets/upload-similar_notice-and-false.png" width="300"/></br>
+          If user say it is not similar notice.
+        </p>
+      </td>
+      <td valign="top">
+        <p align="center" style="color:gray">
+          <img src="../assets/upload-similar_notice-and-true.png" width="300"/></br>
+          If user say it is similar notice.
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## 2. Searching notices
+
+Since we use vector similarity with vector embedding tech, we can use it as searching. Therefore, we apply this in the searching UI which already exist. If you just write the keyword in the searching bar, the ML feature is activated, and find similar notice.
+
+<p align="center" style="color:gray">
+  <img src="../assets/searching.png"/></br>
+ the result of the searcing feature.
+</p>
+
+## 3. Detecting deadline
+
+This feature detects the deadline of the notice that is crawled to the school's webpage. So, this feature cannot be found on our webpage, but it will be applied to the crawling feature in Ziggle. 
+
 # 7. Reflection (400 words)
 
 # 8. Broader Impacts (250 words)
