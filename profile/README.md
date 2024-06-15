@@ -127,11 +127,16 @@ Since this system can have malfunction, after checking conflict notice, it check
 
 ## 2. Searching notices
 
+Since we use vector similarity with vector embedding tech, we can use it as searching. Therefore, we apply this in the searching UI which already exist. If you just write the keyword in the searching bar, the ML feature is activated, and find similar notice.
 
+<p align="center" style="color:gray">
+  <img src="../assets/searching.png"/></br>
+ the result of the searcing feature.
+</p>
 
 ## 3. Detecting deadline
 
-This feature detects the deadline of the notice that is crawled to the school's webpage. So, this feature cannot be found on our webpage, but it will be applied to the crawling feature in Ziggle.
+This feature detects the deadline of the notice that is crawled to the school's webpage. So, this feature cannot be found on our webpage, but it will be applied to the crawling feature in Ziggle. 
 
 # 7. Reflection (400 words)
 
