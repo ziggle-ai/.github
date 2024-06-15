@@ -64,19 +64,15 @@ We basically forked the existing Ziggle frontend repository and edited for demoi
 ### 1. will be updated
 
 # 4. Machine Learning component (300 words)
-| data preparation, document vector embedding, vector search, LLM
 
 ## 1. Document Similarity Based Features
-> Embedding
 
 ### 1. Document embedding with GPT model
 We used `text-embedding-3` model to get vector from a notification. If an article is bigger than the token limitation, we simply cut it into a embeddible length.
 
 ### 2. Chunk based embedding and similarity score. (Further task)
 
-> Search
-
-1. There are several similarity search machanisms. And the most popular three similarity formulas are euclidian, cosine similarity, and dot product. As the main target was to detect the almost same article, the ** dot product** which considers not only the direction but also the magnitude that proportionate to the text length was selected as the matrix for calculating the text similarity
+There are several similarity search machanisms. And the most popular three similarity formulas are euclidian, cosine similarity, and dot product. As the main target was to detect the almost same article, the ** dot product** which considers not only the direction but also the magnitude that proportionate to the text length was selected as the matrix for calculating the text similarity
 
 ## 2. Deadline Detection
 We first plan to use the GPT API for the deadline detection feature. But during our development period, [GPT was one down](https://www.merca20.com/yes-chatgpt-is-down-today-why-is-it-not-working/). To retain the credibility for our service, we determine to prepare another detection system. Then, we are now serving our own fine-tuned local model.
@@ -89,9 +85,11 @@ We aimed to conduct transfer learning with pre-trained large language models. Si
 
 Since the lack of resource for serving and funds, we need to reduce the cost for serving and adjusting our model. Fine-tuning model on colab became possible with [Unsloth](https://unsloth.ai/) library. 
 
-- QLoRA: efficient finetuning of Quantized LLMs (to be continued)
+- QLoRA: efficient finetuning of Quantized LLMs
+  To train fastly while maintaining the task performance, we adapted the parameter efficient finetuning. Especially, QLoRA which is quantized version of LoRA was used. By this method, the speed of the training was enhanced.
   
-- Llama-3 (to be continued)
+- Llama-3
+  Among lots of large language models, we choosed to use Llama-3.
 
 # 5. System evaluation (500 words)
 > Several local base model, and compare their score and cost
