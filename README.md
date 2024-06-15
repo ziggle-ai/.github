@@ -77,7 +77,7 @@ We have an existing application, Ziggle, and we apply advanced features over Zig
 After logging into our application with Infoteam IDP (you will need the gist email), go to the page to write the notice. Then you can find the UI below.
 
 <p align="center" style="color:gray">
-  <img src="../assets/ziggle-write_page.png" width="300"/></br>
+  <img src="./assets/ziggle-write_page.png" width="300"/></br>
   The writing page in Ziggle.
 </p>
 
@@ -90,13 +90,13 @@ If the notice's body is already in the database, our webpage alerts the user to 
     <tr style="padding: 0"> 
       <td valign="top">
         <p align="center" style="color:gray">
-          <img src="../assets/upload-not-similar_notice.png" width="300"/></br>
+          <img src="./assets/upload-not-similar_notice.png" width="300"/></br>
           If user write the notice which is not in the database.
         </p>
       </td>
       <td valign="top">
         <p align="center" style="color:gray">
-          <img src="../assets/upload-similar_notice.png" width="300"/></br>
+          <img src="./assets/upload-similar_notice.png" width="300"/></br>
           If user write the notice which is in the database.
         </p>
       </td>
@@ -111,13 +111,13 @@ Since this system can have malfunction, after checking conflict notice, it check
     <tr style="padding: 0"> 
       <td valign="top">
         <p align="center" style="color:gray">
-          <img src="../assets/upload-similar_notice-and-false.png" width="300"/></br>
+          <img src="./assets/upload-similar_notice-and-false.png" width="300"/></br>
           If user say it is not similar notice.
         </p>
       </td>
       <td valign="top">
         <p align="center" style="color:gray">
-          <img src="../assets/upload-similar_notice-and-true.png" width="300"/></br>
+          <img src="./assets/upload-similar_notice-and-true.png" width="300"/></br>
           If user say it is similar notice.
         </p>
       </td>
@@ -130,7 +130,7 @@ Since this system can have malfunction, after checking conflict notice, it check
 Since we use vector similarity with vector embedding tech, we can use it as searching. Therefore, we apply this in the searching UI which already exist. If you just write the keyword in the searching bar, the ML feature is activated, and find similar notice.
 
 <p align="center" style="color:gray">
-  <img src="../assets/searching.png"/></br>
+  <img src="./assets/searching.png"/></br>
  the result of the searcing feature.
 </p>
 
