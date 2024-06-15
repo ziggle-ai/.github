@@ -65,8 +65,20 @@ We basically forked the existing Ziggle frontend repository and edited for demoi
 ### 1. will be updated
 
 # 4. Machine Learning component (300 words)
+| document vector embedding, vector search, LLM
+
+### 1. Document Similarity Search
+> Embedding
+1. Document embedding with GPT model
+We used `text-embedding-3` model to get vector from a notification. If an article is bigger than the token limitation, we simply cut it into a embeddible length.
+
+2. Chunk based embedding and similarity score. (Further task)
+
+> Search
+1. There are several similarity search machanisms. And the most popular three similarity formulas are euclidian, cosine similarity, and dot product. As the main target was to detect the almost same article, the ** dot product** which considers not only the direction but also the magnitude that proportionate to the text length was selected as the matrix for calculating the text similarity  
 
 # 5. System evaluation (500 words)
+> Several local base model, and compare their score and cost
 
 # 6. Application demonstration (300 words)
 
