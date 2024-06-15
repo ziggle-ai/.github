@@ -30,7 +30,7 @@ Plus, since our platform is notification platform, the deadline information is r
 
 # Ziggle AI: System Design
 
-![system](./assets/system.png)
+![system](../assets/system.png)
 
 ## 1. Data Pipelines
 
