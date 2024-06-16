@@ -104,10 +104,12 @@ We aimed to conduct transfer learning with pre-trained large language models. Si
 Since the lack of resource for serving and funds, we need to reduce the cost for serving and adjusting our model. Fine-tuning model on colab became possible with [Unsloth](https://unsloth.ai/) library. 
 
 - QLoRA: efficient finetuning of Quantized LLMs
+  
   To train fastly while maintaining the task performance, we adapted the parameter efficient finetuning. Especially, QLoRA which is quantized version of LoRA was used. By this method, the speed of the training was enhanced.
   
-- Llama-3
-  Among lots of large language models, we choosed to use Llama-3.
+- Llama-3 & TinyLlama
+  
+  Among lots of large language models, we choosed to use Llama-3. Additionally, for the purpose of reducing the memory usage, we finally selected TinyLlama which uses only 1.1B parameters that is smaller than Llama 3 which has 8B to 70B parameters.
 
 # System evaluation (500 words)
 > Several local base model, and compare their score and cost
