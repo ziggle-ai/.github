@@ -28,7 +28,7 @@ We have features to set deadline for each notices, but for the undergraduate not
 
 Plus, since our platform is notification platform, the deadline information is really important. And this AI system could applied for other necessary purposes like checking for writing deadlines and so on .
 
-# Ziggle AI: System Design
+# Ziggle AI: System Design (500 words)
 <div align="center">
   <img src="./assets/system.png" width=500 />
 </div>
