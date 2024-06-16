@@ -60,8 +60,11 @@ This helps to reduce the workloads for developing the model training pipeline.
 ## 3. User Interface System
 
 We basically forked the existing Ziggle frontend repository and edited for demoing and grasping the built AI features.
-![image](https://github.com/ziggle-ai/.github/assets/42310616/59886ea2-e0ae-4392-8d96-a3800bb4c22a)
-![image](https://github.com/ziggle-ai/.github/assets/42310616/90ee6492-3ae3-4abd-8690-3991b6035dd6)
+
+<div display="flex" align="center">
+  <img src="https://github.com/ziggle-ai/.github/assets/42310616/59886ea2-e0ae-4392-8d96-a3800bb4c22a" width="200"/>
+  <img src="https://github.com/ziggle-ai/.github/assets/42310616/90ee6492-3ae3-4abd-8690-3991b6035dd6" width="600"/>
+</div>
 
 ## 4. Deployment
 
@@ -113,6 +116,14 @@ Since the lack of resource for serving and funds, we need to reduce the cost for
 
 # System evaluation (500 words)
 > Several local base model, and compare their score and cost
+
+### 1. Accuracy
+
+(image 1) (image 2)
+
+In the sense of comparing two local finetuning model, we presents the accuracy from Llama 3 and TinyLlama. The training speed... and the accuracy score from our own built data...
+
+### 2. Inference Time
 
 
 
