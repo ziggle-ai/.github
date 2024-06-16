@@ -1,9 +1,9 @@
-# We are (almost) 'Ziggle' development team! 🐱
+# We are (almost) a 'Ziggle' development team! 🐱
 
 > Team information
 
-1. 김영목, AI 22
-2. 이상유, EECS 19
+1. 김영목, AI 22 ✉️ mailto: <ai5308-2024spr@sangyul.ee>
+2. 이상유, EECS 19 ✉️ mailto: <kym990708@gm.gist.ac.kr>
 3. 황인선, [Personal page](https://github.com/inthree3)
 4. 박시원, [Personal page](https://github.com/siwonpada)
 5. 조민준, [Personal page](https://github.com/minjunj)
@@ -35,27 +35,19 @@ Plus, since our platform is a notification platform, the deadline information is
 
 ## 1. Data Pipelines
 
-Our team operated the Ziggle AI system by configuring a CD using the GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the AI system is implemented by configuring a separate Python-based API server. The accumulated data while operating Ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
+Our team operated the Ziggle AI system by configuring a CD using the GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing Ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the AI system is implemented by configuring a separate Python-based API server. The accumulated data while operating Ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
 
 ## 2. Modeling (will be edited)
 
-### 1. Unsloth
+<div align="center">
+  <img src="https://github.com/ziggle-ai/.github/assets/42310616/5b6efc40-dd68-4e0f-8612-923fa918978c"/>
+</div>
 
-We used Unsloth for finetuning the Llama 3 model to detect the deadline for given notices.
+We used Unsloth for finetuning the Llama 3 model to detect the deadline for given notices. We chose this library because this is optimized for training Large Language Models(LLMs) with local computer resources.
 
-We chose this library because this is optimized for training Large Language Models(LLMs) with local computer resources.
+GPT API is used for building fine-tuning datasets. Since we applied the idea of **transfer learning** the GPT 4o served a role as a **parent**.
 
-### 2. GPT API
-
-GPT API is used for building fine tuning dataset.
-
-Since, we applied the idea of **transfer learning** the GPT 4o gave us the root
-
-### 3. Hugging Face
-
-For managing the dataset and the (pre-trained) models, we used Hugging Face.
-
-This helps to reduce the workloads for developing the model training pipeline.
+For managing the dataset and the (pre-trained) models, we used Hugging Face. This helped to reduce the workload for developing the model training pipeline.
 
 ## 3. User Interface System
 
@@ -78,7 +70,7 @@ The backend application in this project uses the Fastapi framework, MongoDB, and
 
 ### 3. Infrastructure
 
-In order not to affect existing services, a Kubernetes cluster was configured in the On-Premise environment. A separate ziggle namespace was created to distribute the front-end and AI's Kubernetes deployment and expose it to the outside through a service component.
+In order not to affect existing services, a Kubernetes cluster was configured in the On-Premise environment. A separate Ziggle namespace was created to distribute the front-end and AI's Kubernetes deployment and expose it to the outside through a service component.
 
 All distributions were centered on Github's organization, and a repository for each part was created and managed. In addition, a CD was built through Github activities. ArgoCD is adopted for continuous delivery and verification of the status of each service while managing all codes through Github. If any changes occur in each repository, the Github action bot changes the contents of the infra repository.
 
@@ -248,7 +240,7 @@ This feature detects the deadline of the notice that is crawled to the school's 
 
 ## 1. What we worked
 
-Our purpose is to reduce the notice alarm that comes from similar notices. To solve this problem, we need the technology that obtains the similarity among the notices in our database. We used the `text-embedding-3` model of OPENAI to get a vector from a notice. Additionally, we used MongoDB's vector storing feature to store the vector that comes from the text-embedding model. After storing vector data, Using users' input and MongoDB's vector searching feature, we provide the result of whether similar notices exist and the list of similar notices. As a result, using text-embedding and vector search technology, we alert the user that a similar notice already exists in the database through the existing ziggle UI. Furthermore, we implemented the search feature with vector searching technology.
+Our purpose is to reduce the notice alarm that comes from similar notices. To solve this problem, we need the technology that obtains the similarity among the notices in our database. We used the `text-embedding-3` model of OPENAI to get a vector from a notice. Additionally, we used MongoDB's vector storing feature to store the vector that comes from the text-embedding model. After storing vector data, Using users' input and MongoDB's vector searching feature, we provide the result of whether similar notices exist and the list of similar notices. As a result, using text-embedding and vector search technology, we alert the user that a similar notice already exists in the database through the existing Ziggle UI. Furthermore, we implemented the search feature with vector searching technology.
 
 Our other purpose is to attach the deadline information to the academic notice crawled on the school's webpage. To solve this problem, we need to find or detect the deadline from the notice on the school's webpage. We used Lama-3 and trained it. However, it is for crawling data and is not shown in the Ziggle UI.
 
@@ -268,6 +260,6 @@ The final purpose of our team is to apply this AI feature to the production serv
 
 In the process of adopting an AI model that detects duplicate notices in order to avoid duplicate notice notifications, there was an omission due to unintended use. For example, when comparing titles, "Data Engineering May Event" and "Data E1ngineering May Event" tended to be classified into completely different notices. To solve this problem, we adopt a similarity measuring system to show how similar the notice is to the existing notice, show existing notice that can be duplicated, and give the user a final choice, if correct, send a notice without a notice, and if not, send a notification.
 
- Since the AI system requires a GPU, if all elements of the ziggle are monolithically configured, the server tends to go down due to the load of the GPU as soon as the notice writer is crowded. Therefore, the load point is clearly separated by operating a separate server for the AI system and adopting a Micro Service Architecture (MSA) method that separates the ziggle FE and traditional BE servers. In addition, in order to efficiently operate and monitor each divided server,  we were chose Kubernetes and Gitops methods to automate distribution according to the user load and design to enable stable service operation.
+ Since the AI system requires a GPU, if all elements of the Ziggle are monolithically configured, the server tends to go down due to the load of the GPU as soon as the notice writer is crowded. Therefore, the load point is clearly separated by operating a separate server for the AI system and adopting a Micro Service Architecture (MSA) method that separates the Ziggle FE and traditional BE servers. In addition, in order to efficiently operate and monitor each divided server,  we chose Kubernetes and Gitops methods to automate distribution according to the user load and design to enable stable service operation.
 
 # 9. References
