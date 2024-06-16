@@ -119,13 +119,59 @@ Since the lack of resource for serving and funds, we need to reduce the cost for
 
 ### 1. Accuracy
 
-(image 1) (image 2)
+![image](https://github.com/ziggle-ai/.github/assets/42310616/0bc2fa09-b3cf-490b-8626-931892cced2e)
 
-In the sense of comparing two local finetuning model, we presents the accuracy from Llama 3 and TinyLlama. The training speed... and the accuracy score from our own built data...
+In the sense of comparing two local finetuning model, we presents the accuracy from Llama 3 and TinyLlama. The training process is displayed as above, and the accuracy score of our own built data is as follow.
+
+|Model Name|Loss|
+|---|---|
+|Llama 3|1.677|
+|TinyLlama|0.8692|
+
+But, if we look into practical test, the efficiency of each model are quite differnet.
+
+> The Llama 3 Case
+
+```
+### Instruction:
+## 당신의 목적
+당신은 공지글로부터 신청 마감 기한, 행사 시작 시간과 같은 deadline 정보를 알아내는 AI 봇입니다.
+
+## 입력 정보
+**공지의 생성 일자**와 **공지 본문**이 제공됩니다.
+
+## 출력 값
+만약, deadline을 알아내기에 정보가 충분하지 않다면 빈 문자열을 반환하고, 정보가 있다면 '%Y-%m-%d %H:%M:%S'의 datetime.datetime 형식의 string으로 deadline을 알려주세요.
+
+## 출력 형식
+다음과 같은 json 형태로 출력하세요 {'deadline': ''}
+
+### Input:
+## 공지의 생성 일자
+2024-06-09 00:00:000
+
+## 공지 본문
+오늘은 일요일입니다! 다음주 수요일까지 제 생일파티의 참여를 신청받습니다~ 많은 신청바랍니다!~
+
+이제 json 형식으로 마감 기한 정보를 추출해주세요.
+
+### Response:
+{'deadline': '2024-06-12 23:59:00'}<|end_of_text|>
+```
+
+At least, the response format is right. But the smaller parameter model, TinyLlama often fails to match the right format.
+
+```
+["<s> Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\n**당신의 역할 **\n당신은 공지글로부터 신청 마감 기한, 종료일, 행사 시작 시간과 같은 마감 기한 정보를 알아내는 AI 봇입니다.\n\n** 입력 정보 **\n**공지의 생성 일자**와 **공지 본문**이 제공됩니다.\n\n** 출력 값 **\n만약, deadline을 알아내기에 정보가 충분하지 않다면 빈 문자열을 반환하고, 정보가 있다면 '%Year-%month-%day %Hour:%Minute:%Second'의 datetime 형식의 string으로 deadline을 알려주세요.\n** 출력 형식 **\n다음과 같은 json 형태만 출력하세요 {'deadline': ''}\n\n### Input:\n\n🧩🍗 퍼즐 풀고 치킨 받자~! [GIST DSLAB 퍼즐 게임 출시] 🍗🧩\n\n안녕하세요, GIST Data Science Lab에서 퍼즐 게임 O2ARC 3.0을 출시했습니다!\n\n주어진 규칙을 추측해서 정답을 만들어서 점수를 쌓아보세요!\n\n매월 🔥TOP 1, 2, 3위🔥를 선정해서 🍗치킨🍗 or ☕커피☕ 쿠폰을 드립니다!\n\n \n\n🔥🔥🔥접속 링크🔥🔥🔥\n\nhttps://o2arc.com/\n\n🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n\n4월 순위 산정 기한 : 4월 1일 00시 00분 ~ 4월 30일 23시 59분\n\n \n\n✨ 문제 풀이 Tip! ✨\n\n적은 시간과 동작을 사용한 효율적인 풀이일수록 높은 점수를 얻을 수 있습니다!\n\n메인 페이지에 낮은 난이도 순서대로 문제가 정렬되어 있습니다!\n\n \n\n⚠️ 주의! ⚠️\n\n가입 시 사용하는 이메일로 경품을 지급하니, 실제로 사용하는 이메일로 가입해주세요!\n\n \n\n💡문의처💡\n\nsuyeonshim@gm.gist.ac.kr\n\nGIST DS Lab 심수연 인턴\n\n\n### Response:\n{'deadline': 2024-03-1-10 12:00:0}\n</s>"]
+```
 
 ### 2. Inference Time
 
+The inference time was tested with 5 cases and overall, the inference time was short enough to be able to applied in our running service.
 
+|Deadline Detection (Llama 3)|Deadline Detection (TinyLlama)|Alarm Muting|
+|---|---|---|
+|< 5s|< 5s|< 3s|
 
 # Application demonstration (300 words)
 > Application link: [Ziggle AI ↗️](http://210.125.85.31:32442/ko/home?page=0)
