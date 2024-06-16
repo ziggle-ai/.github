@@ -177,11 +177,13 @@ Our other purpose is to attach the deadline information to the academic notice c
 
 We used the text-embedding model, but we did not use chunking when using the text-embedding model. 
 
-
+Since this is a demo application, its database is not directly reflected in the production database. Our production database is also Postgresql, which is completely different from MongoDB. It must deploy two different databases if we run it at the production level. Therefore, to reduce the complexity of the operation, we need to reduce the type of database.
 
 ## 3. further work
 
+To address the weakness we discussed above, we developed a method that uses chunking technology and reduces the database's type. We will use Postgresql's vector database feature. 
 
+The final purpose of our team is to apply this AI feature to the production server and frontend UI. We need the server that deploys the LLM to use the AI feature so you find the resource that can calculate the LLM at a low cost.
 
 # Broader Impacts (250 words)
 
