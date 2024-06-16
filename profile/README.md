@@ -28,7 +28,7 @@ We have features to set deadline for each notices, but for the undergraduate not
 
 Plus, since our platform is notification platform, the deadline information is really important. And this AI system could applied for other necessary purposes like checking for writing deadlines and so on .
 
-# Ziggle AI: System Design
+# System Design
 <div align="center">
   <img src="../assets/system.png" width=500 />
 </div>
@@ -37,7 +37,7 @@ Plus, since our platform is notification platform, the deadline information is r
 
 Our team operated the ziggle ai system by configuring a CD using GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the ai system implement by configuring a separate Python-based API server. The accumulated data while operating ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
 
-## 2. Modeling
+## 2. Modeling (will be edited)
 
 ### 1. Unsloth
 
@@ -60,6 +60,12 @@ This helps to reduce the workloads for developing the model training pipeline.
 ## 3. User Interface System
 
 We basically forked the existing Ziggle frontend repository and edited for demoing and grasping the built AI features.
+![image](https://github.com/ziggle-ai/.github/assets/42310616/59886ea2-e0ae-4392-8d96-a3800bb4c22a)
+![image](https://github.com/ziggle-ai/.github/assets/42310616/90ee6492-3ae3-4abd-8690-3991b6035dd6)
+
+## 4. Deployment
+
+(will be updated)
 
 ### 1. will be updated
 
@@ -93,6 +99,8 @@ Since the lack of resource for serving and funds, we need to reduce the cost for
 
 # System evaluation (500 words)
 > Several local base model, and compare their score and cost
+
+
 
 # Application demonstration (300 words)
 > Application link: [Ziggle AI ↗️](http://210.125.85.31:32442/ko/home?page=0)
