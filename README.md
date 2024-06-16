@@ -177,13 +177,13 @@ Our other purpose is to attach the deadline information to the academic notice c
 
 We used the text-embedding model, but we did not use chunking when using the text-embedding model. 
 
-Since this is a demo application, its database is not directly reflected in the production database. Our production database is also Postgresql, which is completely different from MongoDB. It must deploy two different databases if we run it at the production level. Therefore, to reduce the complexity of the operation, we need to reduce the type of database.
+Since this is a demo application, its database is not directly reflected in the production database. Our production database is also Postgresql, which is completely different from MongoDB. It must deploy two databases if we run it at the production level. Therefore, to reduce the complexity of the operation, we need to reduce the type of database.
 
 ## 3. further work
 
-To address the weakness we discussed above, we developed a method that uses chunking technology and reduces the database's type. We will use Postgresql's vector database feature. 
+To address the weakness we discussed, we developed a method that uses chunking technology and reduces the database's type. We will use Postgresql's vector database feature. 
 
-The final purpose of our team is to apply this AI feature to the production server and frontend UI. We need the server that deploys the LLM to use the AI feature so you find the resource that can calculate the LLM at a low cost.
+The final purpose of our team is to apply this AI feature to the production server and frontend UI. We need the server that deploys the LLM to use the AI feature, so we need to find the resources to calculate the LLM cheaply.
 
 # Broader Impacts (250 words)
 
@@ -191,4 +191,4 @@ In adopting an AI model that detects duplicate notices to avoid duplicate notice
 
  Since the AI system requires a GPU, if all elements of the ziggle are monolithically configured, the server tends to go down due to the GPU load as soon as the notice writer is crowded. Therefore, the load point is separated by operating a separate server for the AI system and adopting a Micro Service Architecture (MSA) method that separates the ziggle FE and traditional BE servers. In addition, to efficiently operate and monitor each divided server,  we chose Kubernetes and Gitops methods to automate distribution according to the user load and design to enable stable service operation.
 
-# 9. References
+# References
