@@ -20,13 +20,15 @@ Most general **user dissatisfaction voices** came from the duplicated alarms for
 
 These dissatisfactions were because some notice writers delete and reupload their notices when they make a subtle mistake, rather than use our application editing functions.
 
+We needed an automatic system to handle this problem rather than relying on users' appropriate actions.
+
 ### 2. Deadline Detection System
 
 For the user's comfort, we automatically crawl the GIST's undergraduate notices and upload them to our Ziggle app.
 
 We have features to set deadlines for each notice, but for undergraduate notices, it is impossible to register the deadlines because those are automatic processes.
 
-Plus, since our platform is a notification platform, the deadline information is vital. This AI system could applied for other necessary purposes like checking for writing deadlines and so on.
+Plus, the deadline information is vital since our platform is a notification platform as this is linked to other functions such as **reminder push alarms** and **sorting by deadlines**.
 
 # System Design
 <div align="center">
@@ -37,7 +39,7 @@ Plus, since our platform is a notification platform, the deadline information is
 
 Our team operated the Ziggle AI system by configuring a CD using the GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing Ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the AI system is implemented by configuring a separate Python-based API server. The accumulated data while operating Ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
 
-## 2. Modeling (will be edited)
+## 2. Modeling
 
 <div align="center">
   <img src="https://github.com/ziggle-ai/.github/assets/42310616/5b6efc40-dd68-4e0f-8612-923fa918978c"/>
