@@ -167,6 +167,12 @@ This feature detects the deadline of the notice that is crawled to the school's 
 
 # Reflection (400 words)
 
+## 1. Strength
+
+## 2. Weakness
+
+## 3. further work
+
 # Broader Impacts (250 words)
 
 In the process of adopting an AI model that detects duplicate notices in order to avoid duplicate notice notifications, there was an omission due to unintended use. For example, when comparing titles, "Data Engineering May Event" and "Data E1ngineering May Event" tended to be classified into completely different notices. To solve this problem, we adopt a similarity measuring system to show how similar the notice is to the existing notice, show existing notice that can be duplicated, and give the user a final choice, if correct, send a notice without a notice, and if not, send a notification.
