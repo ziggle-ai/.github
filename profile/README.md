@@ -67,10 +67,19 @@ We basically forked the existing Ziggle frontend repository and edited for demoi
 
 ### 1. Frontend
 
+Since frontend deployment is forked Ziggle frontend, our frontend follows the tech stack of Ziggle frontend, so we use the Nextjs framework for developing frontend applications. It is responsible for showing UI and using the backend's API. Finally, To deploy the application, we used a docker container.
+
 ### 2. Backend
+
+The backend application in this project uses the Fastapi framework, MongoDB, and Openai library. It is responsible only for AI features. This application does not impliment the API for the ordinary feature, and it does not perform machine learning, so it does not use GPU resources. Therefore, it uses the docker container without GPU resources.
 
 ### 3. Infrastructure
 
+In order not to affect existing services, a Kubernetes cluster was configured in the On-Premise environment. A separate ziggle namespace was created to distribute the front-end and AI's Kubernetes deployment and expose it to the outside through a service component.
+
+All distributions were centered on Github's organization, and a repository for each part was created and managed. In addition, a CD was built through Github activities. ArgoCD is adopted for continuous delivery and verification of the status of each service while managing all codes through Github. If any changes occur in each repository, the Github action bot changes the contents of the infra repository.
+
+ArgoCD monitors the infra Repository, automatically creating a new pod when a change occurs in that repository, and implements Continuous Delivery by deleting the existing pod.
 
 # Machine Learning component (300 words)
 
