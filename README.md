@@ -167,11 +167,21 @@ This feature detects the deadline of the notice that is crawled to the school's 
 
 # Reflection (400 words)
 
-## 1. Strength
+## 1. What we worked
+
+Our purpose is to reduce the notice alarm that comes from similar notices. To solve this problem, we need the technology that obtains the similarity among the notices in our database. We used the `text-embedding-3` model of OPENAI to get a vector from a notice. Additionally, we used MongoDB's vector storing feature to store the vector that comes from the text-embedding model. After storing vector data, Using users' input and MongoDB's vector searching feature, we provide the result of whether similar notices exist and the list of similar notices. As a result, using text-embedding and vector search technology, we alert the user that a similar notice already exists in the database through the existing ziggle UI. Furthermore, we implemented the search feature with vector searching technology.
+
+Our other purpose is to attach the deadline information to the academic notice crawled on the school's webpage. To solve this problem, we need to find or detect the deadline from the notice on the school's webpage. We used Lama-3 and trained it. However, it is for crawling data and is not shown in the Ziggle UI.
 
 ## 2. Weakness
 
+We used the text-embedding model, but we did not use chunking when using the text-embedding model. 
+
+
+
 ## 3. further work
+
+
 
 # Broader Impacts (250 words)
 
