@@ -108,7 +108,7 @@ After logging into our application with Infoteam IDP (you will need the gist ema
   The writing page in Ziggle.
 </p>
 
-With the UI above, you can write the notice's body and title. Complete the writing and push the "submit" button. Then, the machine learning feature will be active, checking whether the notice's body is already in the database.
+You can write the notice's body and title using the UI above. Complete the writing and push the "submit" button. Then, the machine learning feature will be active, checking whether the notice's body is already in the database.
 
 If the notice's body is already in the database, our webpage alerts the user to prevent a conflict notice, and the notice will be uploaded correctly.
 
@@ -118,20 +118,20 @@ If the notice's body is already in the database, our webpage alerts the user to 
       <td valign="top">
         <p align="center" style="color:gray">
           <img src="./assets/upload-not-similar_notice.png" width="300"/></br>
-          If user write the notice which is not in the database.
+          If the user writes a notice that is not in the database,
         </p>
       </td>
       <td valign="top">
         <p align="center" style="color:gray">
           <img src="./assets/upload-similar_notice.png" width="300"/></br>
-          If user write the notice which is in the database.
+          If the user writes the notice in the database.
         </p>
       </td>
     </tr>
   </table>
 </div>
 
-Since this system can have malfunction, after checking conflict notice, it check users intention with showing the notice that similar to users' input. If user say it is not the similar notice, store the database as edgecase and upload notice with alarm. Else, upload notice without alarm.
+Since this system can malfunction, after checking conflict notices, it checks users' intentions by showing notices similar to users' input. If users say it is not a similar notice, store the database as an edge case and upload the notice with an alarm. Otherwise, upload the notice without an alarm.
 
 <div align="center">
   <table cellpadding="0">
@@ -139,13 +139,13 @@ Since this system can have malfunction, after checking conflict notice, it check
       <td valign="top">
         <p align="center" style="color:gray">
           <img src="./assets/upload-similar_notice-and-false.png" width="300"/></br>
-          If user say it is not similar notice.
+          If the user says it is not similar notice.
         </p>
       </td>
       <td valign="top">
         <p align="center" style="color:gray">
           <img src="./assets/upload-similar_notice-and-true.png" width="300"/></br>
-          If user say it is similar notice.
+          If the user says it is a similar notice.
         </p>
       </td>
     </tr>
@@ -154,11 +154,11 @@ Since this system can have malfunction, after checking conflict notice, it check
 
 ## 2. Searching notices
 
-Since we use vector similarity with vector embedding tech, we can use it as searching. Therefore, we apply this in the searching UI which already exist. If you just write the keyword in the searching bar, the ML feature is activated, and find similar notice.
+Since we use vector similarity with vector embedding tech, we can use it for searching. Therefore, we apply this to the already existing searching UI. If you write the keyword in the search bar, the ML feature is activated, and you find a similar notice.
 
 <p align="center" style="color:gray">
   <img src="./assets/searching.png"/></br>
- the result of the searcing feature.
+ the result of the search feature.
 </p>
 
 ## 3. Detecting deadline
@@ -175,8 +175,8 @@ This feature detects the deadline of the notice that is crawled to the school's 
 
 # Broader Impacts (250 words)
 
-In the process of adopting an AI model that detects duplicate notices in order to avoid duplicate notice notifications, there was an omission due to unintended use. For example, when comparing titles, "Data Engineering May Event" and "Data E1ngineering May Event" tended to be classified into completely different notices. To solve this problem, we adopt a similarity measuring system to show how similar the notice is to the existing notice, show existing notice that can be duplicated, and give the user a final choice, if correct, send a notice without a notice, and if not, send a notification.
+In adopting an AI model that detects duplicate notices to avoid duplicate notice notifications, there was an omission due to unintended use. For example, when comparing titles, "Data Engineering May Event" and "Data Engineering May Event" tended to be classified into completely different notices. To solve this problem, we adopt a similarity measuring system to show how similar the notice is to the existing notice, show an existing notice that can be duplicated, and give the user a final choice, if correct, send a notice without notice, and if not, send a notification.
 
- Since the AI system requires a GPU, if all elements of the ziggle are monolithically configured, the server tends to go down due to the load of the GPU as soon as the notice writer is crowded. Therefore, the load point is clearly separated by operating a separate server for the AI system and adopting a Micro Service Architecture (MSA) method that separates the ziggle FE and traditional BE servers. In addition, in order to efficiently operate and monitor each divided server,  we were chose Kubernetes and Gitops methods to automate distribution according to the user load and design to enable stable service operation.
+ Since the AI system requires a GPU, if all elements of the ziggle are monolithically configured, the server tends to go down due to the GPU load as soon as the notice writer is crowded. Therefore, the load point is separated by operating a separate server for the AI system and adopting a Micro Service Architecture (MSA) method that separates the ziggle FE and traditional BE servers. In addition, to efficiently operate and monitor each divided server,  we chose Kubernetes and Gitops methods to automate distribution according to the user load and design to enable stable service operation.
 
 # 9. References
