@@ -65,9 +65,12 @@ We basically forked the existing Ziggle frontend repository and edited for demoi
 
 ## 4. Deployment
 
-(will be updated)
+### 1. Frontend
 
-### 1. will be updated
+### 2. Backend
+
+### 3. Infrastructure
+
 
 # Machine Learning component (300 words)
 
