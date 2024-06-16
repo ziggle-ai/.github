@@ -33,37 +33,37 @@ Plus, since our platform is notification platform, the deadline information is r
   <img src="../assets/system.png" width=500 />
 </div>
 
-# 1. Data Pipelines
+## 1. Data Pipelines
 
 Our team operated the ziggle ai system by configuring a CD using GitOps method in Kubernetes. For the separation of the demo environment and efficient project progress, the Back-end server used the existing ziggle's, separated the DataBase for demo, and operated the Front-end for additional UI. In order to efficiently manage Production AI, the ai system implement by configuring a separate Python-based API server. The accumulated data while operating ziggle was embedded in the GPT API and stored in the Vector DB to construct an efficient AI system.
 
-# 2. Modeling
+## 2. Modeling
 
-## 1. Unsloth
+### 1. Unsloth
 
 We used Unsloth for finetuning the Llama 3 model to detect the deadline for given notices.
 
 We chose this library because this is optimized for training Large Language Models(LLMs) with local computer's resource.
 
-## 2. GPT API
+### 2. GPT API
 
 GPT API is used for building fine tuning dataset.
 
 Since, we applied the idea of **transfer learning** the GPT 4o gave us the root
 
-## 3. Hugging Face
+### 3. Hugging Face
 
 For managing the dataset and the (pre-trained) models, we used Hugging Face.
 
 This helps to reduce the workloads for developing the model training pipeline.
 
-# 3. User Interface System
+## 3. User Interface System
 
 We basically forked the existing Ziggle frontend repository and edited for demoing and grasping the built AI features.
 
 ### 1. will be updated
 
-# 4. Machine Learning component (300 words)
+# Machine Learning component (300 words)
 
 ## 1. Document Similarity Based Features
 
@@ -91,10 +91,10 @@ Since the lack of resource for serving and funds, we need to reduce the cost for
 - Llama-3
   Among lots of large language models, we choosed to use Llama-3.
 
-# 5. System evaluation (500 words)
+# System evaluation (500 words)
 > Several local base model, and compare their score and cost
 
-# 6. Application demonstration (300 words)
+# Application demonstration (300 words)
 > Application link: [Ziggle AI ↗️](http://210.125.85.31:32442/ko/home?page=0)
 
 We have an existing application, Ziggle, and we apply advanced features over Ziggle. We applied the alarm when the user wanted to notice that it was already uploaded, the enhanced search feature, which uses vector similarity, and the deadline auto-detecting feature.
@@ -165,9 +165,9 @@ Since we use vector similarity with vector embedding tech, we can use it as sear
 
 This feature detects the deadline of the notice that is crawled to the school's webpage. So, this feature cannot be found on our webpage, but it will be applied to the crawling feature in Ziggle. 
 
-# 7. Reflection (400 words)
+# Reflection (400 words)
 
-# 8. Broader Impacts (250 words)
+# Broader Impacts (250 words)
 
 In the process of adopting an AI model that detects duplicate notices in order to avoid duplicate notice notifications, there was an omission due to unintended use. For example, when comparing titles, "Data Engineering May Event" and "Data E1ngineering May Event" tended to be classified into completely different notices. To solve this problem, we adopt a similarity measuring system to show how similar the notice is to the existing notice, show existing notice that can be duplicated, and give the user a final choice, if correct, send a notice without a notice, and if not, send a notification.
 
